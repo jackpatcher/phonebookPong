@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สมุดโทรศัพท์หน่วยงาน</title>
+    <title>สมุดโทรศัพท์หน่วยงานx</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="data.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
         
@@ -228,58 +229,11 @@
     </div>
 
     <script>
-        // Data Storage
-        let contacts = JSON.parse(localStorage.getItem('phoneBookContacts')) || [
-            {
-                id: 1,
-                name: 'นายสมชาย ใจดี',
-                phone: '02-123-4567',
-                category: 'ฝ่ายบริหาร',
-                position: 'ผู้อำนวยการ',
-                image: null
-            },
-            {
-                id: 2,
-                name: 'นางสาวสุดา รักงาน',
-                phone: '081-234-5678',
-                category: 'ฝ่ายการเงิน',
-                position: 'หัวหน้าบัญชี',
-                image: null
-            },
-            {
-                id: 3,
-                name: 'นายวิชัย เก่งมาก',
-                phone: '089-345-6789',
-                category: 'ฝ่ายเทคโนโลยี',
-                position: 'โปรแกรมเมอร์',
-                image: null
-            },
-            {
-                id: 4,
-                name: 'นางมาลี ขายเก่ง',
-                phone: '092-456-7890',
-                category: 'ฝ่ายการตลาด',
-                position: 'นักการตลาด',
-                image: null
-            },
-            {
-                id: 5,
-                name: 'นายประชา ดูแลดี',
-                phone: '063-567-8901',
-                category: 'ฝ่ายบุคคล',
-                position: 'เจ้าหน้าที่ HR',
-                image: null
-            }
-        ];
-        let categories = JSON.parse(localStorage.getItem('phoneBookCategories')) || [
-            'ฝ่ายบริหาร',
-            'ฝ่ายการเงิน',
-            'ฝ่ายบุคคล',
-            'ฝ่ายเทคโนโลยี',
-            'ฝ่ายการตลาด'
-        ];
-        let currentEditId = null;
-        let currentFilter = 'all';
+    // Data Storage (ใช้จาก data.js)
+    let contacts = JSON.parse(phonebookJSONString).contacts;
+    let categories = JSON.parse(phonebookJSONString).categories;
+    let currentEditId = null;
+    let currentFilter = 'all';
 
         // Initialize App
         function initApp() {
